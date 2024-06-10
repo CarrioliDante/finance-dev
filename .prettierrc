@@ -5,7 +5,7 @@
   "trailingComma": "es5",
   "jsxSingleQuote": true,
   "printWidth": 80,
-  "tabWidth": 1,
+  "tabWidth": 2,
   "objectProperties": "multiline",
   "objectKeySpacing": true,
   "endOfLine": "lf",

@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1718061594195,
+      "tag": "0000_mixed_zarek",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1718062246409,
+      "tag": "0001_third_white_queen",
+      "breakpoints": true
+    }
+  ]
+}
