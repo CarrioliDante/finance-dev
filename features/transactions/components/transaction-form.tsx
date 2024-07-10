@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/form'
 import { Select } from '@/components/select'
 import { Textarea } from '@/components/ui/textarea'
+import { convertAmountToMiliunits } from '@/lib/utils'
 
 const formSchema = z.object({
   date: z.coerce.date(),
@@ -59,7 +60,13 @@ export const TransactionForm = ({
     defaultValues: defaultValues,
   })
   const handleSubmit = (values: FormValues) => {
-    console.log({ values })
+    const amount = parseFloat(values.amount)
+    const amountInMiliUnits = convertAmountToMiliunits(amount)
+
+    onSubmit({
+      ...values,
+      amount: amountInMiliUnits,
+    })
   }
   const handleDelete = () => {
     onDelete?.()
@@ -183,7 +190,7 @@ export const TransactionForm = ({
           )}
         />
         <Button className='w-full' disabled={disabled}>
-          {id ? 'Save Changes' : 'Create account'}
+          {id ? 'Save Changes' : 'Create transaction'}
         </Button>
         {!!id && (
           <Button
@@ -194,7 +201,7 @@ export const TransactionForm = ({
             variant='outline'
           >
             <Trash className='mr-2 size-4' />
-            Delete Account
+            Delete transaction
           </Button>
         )}
       </form>
