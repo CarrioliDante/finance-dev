@@ -28,7 +28,6 @@ export const ImportTable = ({
           <TableRow>
             {headers.map((_item, index) => (
               <TableHead key={index}>
-                {index}
                 <TableHeadSelect
                   columnIndex={index}
                   selectedColumns={selectedColumns}

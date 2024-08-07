@@ -98,6 +98,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
 
     onSubmit(formattedData)
   }
+  //TODO: ADD MercadoPago and argentina banks csv format
 
   return (
     <div className='mx-auto -mt-24 w-full max-w-screen-2xl pb-10'>

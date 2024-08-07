@@ -11,6 +11,10 @@ import { useGetTransactions } from '@/features/transactions/api/use-get-transact
 import { useState } from 'react'
 import { UploadButton } from './upload-button'
 import { ImportCard } from './import-card'
+import { transactions as transactionsSchema } from '@/db/schema'
+import { useSelectAccount } from '@/features/accounts/hooks/use-select-account'
+import { toast } from 'sonner'
+import { useBulkCreateTransactions } from '@/features/transactions/api/use-bulk-create-transactions'
 
 enum VARIANTS {
   LIST = 'LIST',
@@ -24,6 +28,7 @@ const INITIAL_IMPORT_RESULTS = {
 }
 
 const TransactionsPage = () => {
+  const [AccountDialog, confirm] = useSelectAccount()
   const [variant, setVariant] = useState<VARIANTS>(VARIANTS.LIST)
   const [importResults, setImportResults] = useState(INITIAL_IMPORT_RESULTS)
 
@@ -38,11 +43,32 @@ const TransactionsPage = () => {
   }
 
   const newTransaction = useNewTransaction()
+  const createTransactions = useBulkCreateTransactions()
   const deleteTransactions = useBulkDeleteTransactions()
   const transactionsQuery = useGetTransactions()
   const transactions = transactionsQuery.data || []
 
   const isDisabled = transactionsQuery.isLoading || deleteTransactions.isPending
+
+  const onSubmitImport = async (
+    values: (typeof transactionsSchema.$inferInsert)[]
+  ) => {
+    //Request user the account id
+    const accountId = await confirm()
+    if (!accountId) {
+      return toast.error('Please select an account to continue')
+    }
+    const data = values.map((value) => ({
+      ...value,
+      accountId: accountId as string,
+    }))
+
+    createTransactions.mutate(data, {
+      onSuccess: () => {
+        onCancelImport()
+      },
+    })
+  }
 
   if (transactionsQuery.isLoading) {
     return (
@@ -63,10 +89,11 @@ const TransactionsPage = () => {
   if (variant === VARIANTS.IMPORT) {
     return (
       <>
+        <AccountDialog />
         <ImportCard
           data={importResults.data}
           onCancel={onCancelImport}
-          onSubmit={() => {}}
+          onSubmit={onSubmitImport}
         />
       </>
     )
@@ -88,10 +115,7 @@ const TransactionsPage = () => {
               <Plus className='mr-2 size-4' />
               Add New
             </Button>
-            <UploadButton
-              onUpload={onUpload}
-              className='w-full lg:w-auto'
-            ></UploadButton>
+            <UploadButton onUpload={onUpload}></UploadButton>
           </div>
         </CardHeader>
         <CardContent>
