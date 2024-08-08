@@ -25,6 +25,7 @@ export const useGetSummary = () => {
         throw new Error('Failed to fetch summary')
       }
       const { data } = await response.json()
+      console.log('API Response Data:', data)
       return {
         ...data,
         incomeAmount: convertAmountFromMiliunits(data.incomeAmount),
@@ -32,7 +33,7 @@ export const useGetSummary = () => {
         remainingAmount: convertAmountFromMiliunits(data.remainingAmount),
         categories: data.categories.map((category) => ({
           ...category,
-          valie: convertAmountFromMiliunits(category.value),
+          value: convertAmountFromMiliunits(category.value),
         })),
         days: data.days.map((day) => ({
           ...day,
@@ -42,5 +43,6 @@ export const useGetSummary = () => {
       }
     },
   })
+
   return query
 }

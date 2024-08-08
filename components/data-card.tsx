@@ -11,7 +11,7 @@ import {
 import { CountUp } from './count-up'
 import { Skeleton } from './ui/skeleton'
 
-const boxVariant = cva('shrink-0 round-md p-3', {
+const boxVariant = cva('shrink-0 rounded-md p-3', {
   variants: {
     variant: {
       default: 'bg-blue-500/20',
@@ -67,8 +67,9 @@ export const DataCard = ({
             {dateRange}
           </CardDescription>
         </div>
-        <div className={cn({ variant })}></div>
-        <Icon className={cn(iconVariant({ variant }))} />
+        <div className={cn(boxVariant({ variant }))}>
+          <Icon className={cn(iconVariant({ variant }))} />
+        </div>
       </CardHeader>
       <CardContent>
         <h1 className='mb-2 line-clamp-1 break-all text-2xl font-bold'>
