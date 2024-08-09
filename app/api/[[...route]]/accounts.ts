@@ -43,14 +43,18 @@ const app = new Hono()
         return c.json({ error: 'Unauthorized' }, 401)
       }
 
-      const [data] = await db
+      const data = await db
         .select({
           id: accounts.id,
           name: accounts.name,
         })
         .from(accounts)
-        .where(and(eq(accounts.userId, auth.userId), eq(accounts.id, id)))
-
+        .where(
+          and(
+            auth.userId ? eq(accounts.userId, auth.userId) : undefined,
+            eq(accounts.id, id)
+          )
+        )
       if (!data) {
         return c.json({ error: 'Not found' }, 404)
       }
