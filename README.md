@@ -16,13 +16,13 @@ Puedes testear el deploy en vivo en vercel aqui:
 
 ### Tecnologías y Herramientas Utilizadas
 
-- **Next.js**: Utilizado para la renderización del lado del servidor (SSR) y generación de sitios estáticos (SSG). Next.js facilita una carga rápida y una excelente experiencia de usuario, al tiempo que permite el uso de características avanzadas como el pre-renderizado y el enrutamiento dinámico.
-- **React**: La biblioteca central para la construcción de la interfaz de usuario, permitiendo el desarrollo de componentes interactivos y reutilizables. La integración con Next.js proporciona una experiencia fluida y modular.
-- **Hono.js**: Framework ligero para la creación de APIs, utilizado para gestionar la lógica del backend de manera rápida y eficiente. Hono.js permite una integración directa con el frontend, facilitando la comunicación entre el cliente y el servidor.
-- **Zod**: Biblioteca de validación de esquemas que asegura la consistencia y precisión de los datos. Zod simplifica la validación de datos y ayuda a mantener la integridad del estado de la aplicación.
-- **NeonDB**: Base de datos moderna para almacenar datos financieros. NeonDB ofrece una solución escalable y eficiente para manejar grandes volúmenes de información con alta disponibilidad.
-- **Bun**: Utilizado para la ejecución rápida de JavaScript y la gestión de dependencias. Bun acelera el proceso de desarrollo y optimiza la construcción y ejecución de la aplicación.
-- **Drizzle ORM**: Object-Relational Mapper (ORM) que facilita la interacción con la base de datos. Drizzle ORM simplifica las operaciones CRUD y las consultas complejas, proporcionando una capa de abstracción entre el código y la base de datos.
+- **Next.js**: Utilizado para la renderización del lado del servidor (SSR) y generación de sitios estáticos (SSG). 
+- **React**: La biblioteca central del proyecto, permitiendo el desarrollo de componentes interactivos y reutilizables.
+- **Hono.js**: Framework utilizado para la creación de APIs, utilizado para gestionar la lógica del backend de manera rápida y eficiente.
+- **Zod**: Zod, para simplificar la validación de datos y ayudar a mantener la integridad del estado de la aplicación.
+- **NeonDB**: Base de datos moderna para almacenar datos.
+- **Bun**: Utilizado para la ejecución rápida de JavaScript y la gestión de dependencias.
+- **Drizzle ORM**: Object-Relational Mapper (ORM) que facilita la interacción con la base de datos. 
 
 ### Aspectos Técnicos Clave
 
