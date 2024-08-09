@@ -40,8 +40,8 @@ type Props = {
   disabled?: boolean
   accountOptions: { label: string; value: string }[]
   categoryOptions: { label: string; value: string }[]
-  onCreateAccount: (name: string) => void
-  onCreateCategory: (name: string) => void
+  onCreateAccount: (name?: string) => void
+  onCreateCategory: (name?: string) => void
 }
 
 export const TransactionForm = ({
