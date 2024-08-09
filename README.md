@@ -1,12 +1,14 @@
 
 ![ezgif-7-a2f904bbd5](https://github.com/user-attachments/assets/3662995e-db78-4117-92b2-911728fa2d5b)
-ESP
+
+
+### ESP
 ## Descripción del Proyecto
 
 **Finance Dev** es una aplicación web robusta para la gestión de finanzas personales, construida utilizando un stack tecnológico moderno que optimiza tanto el desarrollo como el rendimiento de la aplicación.
 La realizacion de esta Saas es un ejercicio autodidacta para seguir manteniendo mis conocimientos y habilidades técnicas actualizadas a los stacks y estructuras más modernas.
 
-El proyecto cuenta la posibilidad de importar datos financieros mediante CSV, con un archivo de ejemplo incluido en el código o mediante un script de seeding de datos, "bun run db:seed" para generar datos aleatorios que se puedan ajustar al filtro de calendario de los ultimos 30 días.
+El proyecto cuenta la posibilidad de importar datos financieros mediante CSV, con un archivo de ejemplo incluido en el código o mediante un script de seeding de datos. Utiliza `bun run db:seed` para generar datos aleatorios que se puedan ajustar al filtro de calendario de los ultimos 30 días.
 
 Puedes testear el deploy en vivo en vercel aqui:
 [https://finance-gilt.vercel.app/](https://finance-gilt.vercel.app/)
