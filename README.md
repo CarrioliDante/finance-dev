@@ -4,6 +4,12 @@ ESP
 ## Descripción del Proyecto
 
 **Finance Dev** es una aplicación web robusta para la gestión de finanzas personales, construida utilizando un stack tecnológico moderno que optimiza tanto el desarrollo como el rendimiento de la aplicación.
+La realizacion de esta Saas es un ejercicio autodidacta para seguir manteniendo mis conocimientos y habilidades técnicas actualizadas a los stacks y estructuras más modernas.
+
+El proyecto cuenta la posibilidad de importar datos financieros mediante CSV, con un archivo de ejemplo incluido en el código o mediante un script de seeding de datos, "bun run db:seed" para generar datos aleatorios que se puedan ajustar al filtro de calendario de los ultimos 30 días.
+
+Puedes testear el deploy en vivo en vercel aqui:
+[https://finance-gilt.vercel.app/](https://finance-gilt.vercel.app/)
 
 ### Tecnologías y Herramientas Utilizadas
 
@@ -29,23 +35,27 @@ ENG
 
 ## Project Description
 
-**Finance Dev** is a robust web application for personal finance management, built using a modern tech stack that optimizes both development and application performance.
+**Finance Dev** is a robust web application for personal finance management, built using a modern tech stack that optimizes both development and application performance. This project is a self-directed exercise to keep my knowledge and technical skills up-to-date with the latest technologies and structures.
 
 ### Technologies and Tools Used
 
-- **Next.js**: Utilized for server-side rendering (SSR) and static site generation (SSG). Next.js facilitates fast loading and an excellent user experience while enabling advanced features like pre-rendering and dynamic routing.
-- **React**: The core library for building the user interface, allowing for the development of interactive and reusable components. Integration with Next.js provides a smooth and modular experience.
-- **Hono.js**: A lightweight framework for creating APIs, used to manage backend logic quickly and efficiently. Hono.js allows for direct integration with the frontend, streamlining communication between the client and server.
-- **Zod**: Schema validation library that ensures data consistency and accuracy. Zod simplifies data validation and helps maintain the integrity of the application's state.
-- **NeonDB**: A modern database for storing financial data. NeonDB offers a scalable and efficient solution for handling large volumes of information with high availability.
-- **Bun**: Used for fast JavaScript execution and dependency management. Bun accelerates the development process and optimizes the build and execution of the application.
-- **Drizzle ORM**: Object-Relational Mapper (ORM) that facilitates database interaction. Drizzle ORM simplifies CRUD operations and complex queries, providing an abstraction layer between the code and the database.
+- **Next.js**: Utilized for server-side rendering (SSR) and static site generation (SSG).
+- **React**: The core library for building the user interface.
+- **Hono.js**: Lightweight framework for creating APIs.
+- **Zod**: Schema validation library.
+- **NeonDB**: Modern database for storing financial data.
+- **Bun**: Tool for fast JavaScript execution and dependency management.
+- **Drizzle ORM**: Object-Relational Mapper (ORM) for database interaction.
 
 ### Key Technical Aspects
 
-- **Code Structure**: The application follows a modular and scalable architecture, focusing on the separation of concerns between the frontend and backend. React components integrate with APIs provided by Hono.js to manage data efficiently.
-- **Data Validation**: Zod is employed to validate user input and ensure that format and consistency requirements are met before being processed by the backend.
-- **Performance Optimization**: Next.js and Bun work together to optimize application performance, ensuring fast load times and a smooth user experience.
-- **Data Management**: NeonDB and Drizzle ORM provide a robust solution for data storage and management, with efficient queries and a well-defined data structure.
+- **Code Structure**: Modular and scalable architecture, focusing on the separation between the frontend and backend.
+- **Data Validation**: Use of Zod to validate user input.
+- **Performance Optimization**: Next.js and Bun for fast load times and a smooth user experience.
+- **Data Management**: NeonDB and Drizzle ORM for efficient data storage and management.
 
-**Finance Dev** combines these technologies to deliver a comprehensive and modern financial solution, focused on development efficiency and application performance optimization.
+### Data Import
+
+The application allows for importing financial data via CSV files, with a sample file included in the code. Alternatively, a seeding script can be used to generate random data adjusted to the calendar filter for the last 30 days. Use `bun run db:seed` for this purpose.
+
+You can test the live deployment on Vercel here: [https://finance-gilt.vercel.app/](https://finance-gilt.vercel.app/)
